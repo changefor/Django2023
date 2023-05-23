@@ -38,8 +38,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "markdown_deux",
     "mainsite",
 ]
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": False,
+    },
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
