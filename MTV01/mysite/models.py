@@ -12,3 +12,23 @@ class NewTable(models.Model):
     float_f = models.FloatField(null=True)
     int_f = models.IntegerField(default=2010)
     tesxt_f = models.TextField()
+    class Meta:
+        ordering = ( '-models_f',)
+
+    def __str__(self):
+        return self.models_f
+    
+class Product(models.Model):
+    SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+    )
+    sku = models.CharField(max_length=5, unique=True)
+    name = models.CharField(max_length=20)
+    price = models.PositiveIntegerField()
+    size = models.CharField(max_length=1, choices=SIZES)
+    qty = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.name
