@@ -13,7 +13,7 @@ class Post(models.Model):
     message = models.TextField(null=False)
     del_pass = models.CharField(max_length=50)
     pub_time = models.DateTimeField(auto_now=True)
-    enabled = models.BooleanField(default=False) #改True就可以預設為開啟
+    enabled = models.BooleanField(default=True) #改True就可以預設為開啟
     
     def __str__(self):
         return self.message

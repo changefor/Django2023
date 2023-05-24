@@ -3,7 +3,7 @@ from mysite import models
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
-    list_display=('nickname', 'message', 'enabled', 'pub_time')
+    list_display=('nickname', 'message', 'enabled', 'pub_time', 'id')
     ordering=('-pub_time',)
 
 admin.site.register(models.Mood)
