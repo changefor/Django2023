@@ -9,6 +9,27 @@
     </form>
     <br>
     <form name='my form' action='/' method='GET'>
+        <label for='byear'>出生年:</label>
+        <select name='byear'>
+            {% for year in years %}
+                <option value='{{ year }}'>{{ year }} </option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for='fcolor'>喜歡的顏色:</label>
+        <input type='checkbox' name='fcolor' value='Green'>Green
+        <input type='checkbox' name='fcolor' value='Red'>Red
+        <input type='checkbox' name='fcolor' value='Blue'>Blue
+        <input type='checkbox' name='fcolor' value='Yellow'>Yellow
+        <input type='checkbox' name='fcolor' value='Orange'>Orange
+        <br/>
+        <label for='fmovie'>喜好的電影:</label>
+        <input type='radio' name='fmovie' value='哥吉拉2'>哥吉拉2
+        <input type='radio' name='fmovie' value='阿拉丁'>阿拉丁
+        <input type='radio' name='fmovie' value='你的名字'>你的名字
+        <input type='radio' name='fmovie' value='神隱少女'>神隱少女
+        <input type='radio' name='fmovie' value='Evangelion'>Evangelion
+        <br/>
         <label for='user_id'>Your ID:</label>
         <input id='user_id' type='text' name='user_id'>
         <label for='user_pass'>Your Password:</label>
@@ -22,5 +43,9 @@
     {% else %}
     <em>密碼或帳號打錯了喔</em>
     {% endif %}
+    <br>
+    出生年： {{ byear }} <br>
+    顏色喜好： {{ fcolor }} <br>
+    喜歡的電影： {{ fmovie }} <br>
 </div>
 {% endblock %}
